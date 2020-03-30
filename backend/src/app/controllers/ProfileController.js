@@ -4,10 +4,10 @@ module.exports = {
   async index(request, response) {
     const ong_id = request.headers.authorization;
 
-    const incindents = await connection("incindents")
+    const incidents = await connection("incidents")
       .where("ong_id", ong_id)
       .select("*");
 
-    return response.json(incindents);
+    return response.json(incidents);
   }
 };
